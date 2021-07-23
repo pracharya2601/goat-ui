@@ -1,0 +1,6 @@
+"use strict";
+if ("development" === 'production') {
+  module.exports = require('./goat-ui.cjs.production.min.js');
+} else {
+  module.exports = require('./goat-ui.cjs.development.js');
+}
