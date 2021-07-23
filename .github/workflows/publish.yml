@@ -1,0 +1,25 @@
+name: Node.js CI
+on: 
+  push:
+    branches: [main],
+  pull_request:
+    branches: '*'
+jobs:
+  quality:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        node: ['10.x', '12.x', '14.x']
+        os: [ubuntu-latest, windows-latest, macOS-latest]
+
+    steps:
+        uses: actions/checkout@v2
+
+      - name: Use Node ${{ matrix.node }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node }}
+
+        run: yarn ci
+        run: yarn test
+        run: yarn build
