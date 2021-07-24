@@ -7,7 +7,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   text: string;
   variant?: ButtonVariants;
 }
-
+//check
 export const Button: FC<ButtonProps> = ({
   text,
   variant = 'default',
