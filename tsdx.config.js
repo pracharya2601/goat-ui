@@ -1,6 +1,8 @@
 const postcss = require('rollup-plugin-postcss');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
+const tailwindcss = require('tailwindcss');
+const classNames = require('classnames');
 module.exports = {
   rollup(config, options) {
     if (config.output.format === 'umd') {
@@ -10,6 +12,8 @@ module.exports = {
       postcss({
         plugins: [
           autoprefixer(),
+          tailwindcss(),
+          classNames(),
           cssnano({
             preset: 'default',
           }),
