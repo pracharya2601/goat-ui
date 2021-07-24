@@ -1,4 +1,6 @@
 import React, { FC, HTMLAttributes, ReactChild } from 'react';
+import classNames from 'classnames';
+
 
 export interface Props extends HTMLAttributes<HTMLDivElement> {
   /** custom content, defaults to 'the snozzberries taste like snozzberries' */
@@ -13,8 +15,12 @@ import "../tailwind.css"
  * A custom Thing component. Neat!
  */
 export const Thing: FC<Props> = ({ children }) => {
+  const joinedClasses = classNames(`
+    px-8 py-2 font-semibold
+    transition duration-500 ease-in-out transform rounded-lg shadow-xl bg-gradient-to-r from-red-300 to-blue-300 hover:from-pink-400 hover:to-indigo-400
+  `)
   return (
-    <div className='flex items-center justify-center w-5/6 m-auto text-2xl text-center text-pink-700 uppercase bg-yellow-400 shadow-xl rounded-3xl'>
+    <div className={joinedClasses}>
       {children || `the snozzberries taste like snozzberries`}
     </div>
   );
