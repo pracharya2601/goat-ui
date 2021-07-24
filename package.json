@@ -15,6 +15,7 @@
     "build": "tsdx build",
     "test": "tsdx test --passWithNoTests",
     "lint": "tsdx lint",
+    "commit": "git-cz",
     "prepare": "tsdx build",
     "size": "size-limit",
     "analyze": "size-limit --why",
@@ -68,6 +69,7 @@
     "babel-loader": "^8.2.2",
     "chromatic": "^5.10.0-canary.0",
     "classnames": "^2.3.1",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint-plugin-prettier": "^3.4.0",
     "husky": "^7.0.1",
     "identity-obj-proxy": "^3.0.0",
@@ -76,12 +78,12 @@
     "react-dom": "^17.0.2",
     "react-is": "^17.0.2",
     "rollup-plugin-postcss": "^4.0.0",
+    "semantic-release": "^17.4.4",
     "size-limit": "^5.0.1",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "tsdx": "^0.14.1",
     "tslib": "^2.3.0",
-    "typescript": "^4.3.5",
-    "semantic-release": "^17.4.4"
+    "typescript": "^4.3.5"
   },
   "jest": {
     "moduleNameMapper": {
@@ -92,5 +94,10 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/pracharya2601/goat-ui.git"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
